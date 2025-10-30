@@ -7,6 +7,7 @@ function ResumeNavButton({ onClick, iconSrc }) {
   const containerStyle = {
     display: 'flex',
     alignItems: 'center',
+    justifyContent: 'center',
     gap: '8px',
     backgroundColor: isHovered ? '#151515' : 'transparent',
     color: isHovered ? '#e5e7eb' : '#9ca3af',
@@ -32,6 +33,8 @@ function ResumeNavButton({ onClick, iconSrc }) {
     fontSize: '14px',
     fontWeight: 500,
     opacity: isHovered ? 1 : 0,
+    width: isHovered ? 'auto' : 0,
+    marginLeft: isHovered ? '8px' : 0,
     transform: `translateX(${isHovered ? '0' : '8px'})`,
     transition: 'opacity 0.2s ease, transform 0.2s ease'
   };
@@ -59,6 +62,7 @@ function HomeNavButton({ onClick, iconSrc }) {
   const containerStyle = {
     display: 'flex',
     alignItems: 'center',
+    justifyContent: 'center',
     gap: '8px',
     backgroundColor: isHovered ? '#151515' : 'transparent',
     color: isHovered ? '#e5e7eb' : '#9ca3af',
@@ -84,6 +88,8 @@ function HomeNavButton({ onClick, iconSrc }) {
     fontSize: '14px',
     fontWeight: 500,
     opacity: isHovered ? 1 : 0,
+    width: isHovered ? 'auto' : 0,
+    marginLeft: isHovered ? '8px' : 0,
     transform: `translateX(${isHovered ? '0' : '8px'})`,
     transition: 'opacity 0.2s ease, transform 0.2s ease'
   };
@@ -111,6 +117,7 @@ function HobbiesNavButton({ onClick, iconSrc }) {
   const containerStyle = {
     display: 'flex',
     alignItems: 'center',
+    justifyContent: 'center',
     gap: '8px',
     backgroundColor: isHovered ? '#151515' : 'transparent',
     color: isHovered ? '#e5e7eb' : '#9ca3af',
@@ -118,6 +125,60 @@ function HobbiesNavButton({ onClick, iconSrc }) {
     borderRadius: '9999px',
     padding: '6px',
     width: isHovered ? '124px' : '36px',
+    transition: 'all 0.25s ease',
+    cursor: 'pointer',
+    overflow: 'hidden'
+  };
+
+  const iconStyle = {
+    width: '24px',
+    height: '24px',
+    borderRadius: '6px',
+    objectFit: 'cover',
+    display: 'block'
+  };
+
+  const labelStyle = {
+    whiteSpace: 'nowrap',
+    fontSize: '14px',
+    fontWeight: 500,
+    opacity: isHovered ? 1 : 0,
+    width: isHovered ? 'auto' : 0,
+    marginLeft: isHovered ? '8px' : 0,
+    transform: `translateX(${isHovered ? '0' : '8px'})`,
+    transition: 'opacity 0.2s ease, transform 0.2s ease'
+  };
+
+  return (
+    <button
+      onClick={onClick}
+      onMouseEnter={() => setIsHovered(true)}
+      onMouseLeave={() => setIsHovered(false)}
+      style={containerStyle}
+    >
+      {iconSrc ? (
+        <img src={iconSrc} alt="Hobbies" style={iconStyle} />
+      ) : (
+        <div style={{ ...iconStyle, background: '#a855f7' }} />
+      )}
+      <span style={labelStyle}>Hobbies</span>
+    </button>
+  );
+}
+
+function ProjectsNavButton({ onClick, iconSrc }) {
+  const [isHovered, setIsHovered] = useState(false);
+
+  const containerStyle = {
+    display: 'flex',
+    alignItems: 'center',
+    gap: '8px',
+    backgroundColor: isHovered ? '#151515' : 'transparent',
+    color: isHovered ? '#e5e7eb' : '#9ca3af',
+    border: 'none',
+    borderRadius: '9999px',
+    padding: '6px',
+    width: isHovered ? '132px' : '36px',
     transition: 'all 0.25s ease',
     cursor: 'pointer',
     overflow: 'hidden'
@@ -148,30 +209,17 @@ function HobbiesNavButton({ onClick, iconSrc }) {
       style={containerStyle}
     >
       {iconSrc ? (
-        <img src={iconSrc} alt="Hobbies" style={iconStyle} />
+        <img src={iconSrc} alt="Projects" style={iconStyle} />
       ) : (
-        <div style={{ ...iconStyle, background: '#a855f7' }} />
+        <div style={{ ...iconStyle, background: '#f59e0b' }} />
       )}
-      <span style={labelStyle}>Hobbies</span>
+      <span style={labelStyle}>Projects</span>
     </button>
   );
 }
 
 function Hobbies() {
-  const [hoveredButton, setHoveredButton] = useState(null);
   const navigate = useNavigate();
-
-  const navButtonStyle = (isHovered) => ({
-    backgroundColor: 'transparent',
-    color: isHovered ? '#818cf8' : '#9ca3af',
-    border: 'none',
-    padding: '8px 20px',
-    fontSize: '15px',
-    fontWeight: '500',
-    cursor: 'pointer',
-    transition: 'all 0.2s ease',
-    fontFamily: 'system-ui, -apple-system, sans-serif'
-  });
 
   return (
     <div style={{ 
@@ -192,19 +240,10 @@ function Hobbies() {
           onClick={() => navigate('/')}
           iconSrc="home.webp"
         />
-        {['Projects'].map((item) => (
-          <button
-            key={item}
-            style={navButtonStyle(hoveredButton === item)}
-            onMouseEnter={() => setHoveredButton(item)}
-            onMouseLeave={() => setHoveredButton(null)}
-            onClick={() => {
-              navigate('/projects');
-            }}
-          >
-            {item}
-          </button>
-        ))}
+        <ProjectsNavButton
+          onClick={() => navigate('/projects')}
+          iconSrc="project.png"
+        />
         <HobbiesNavButton
           onClick={() => navigate('/hobbies')}
           iconSrc="game.png"
