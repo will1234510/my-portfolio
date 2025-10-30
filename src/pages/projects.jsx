@@ -157,7 +157,7 @@ function HobbiesNavButton({ onClick, iconSrc }) {
   );
 }
 
-export default function Portfolio() {
+export default function Projects() {
   const [hoveredButton, setHoveredButton] = useState(null);
   const navigate = useNavigate();
 
@@ -190,7 +190,7 @@ export default function Portfolio() {
       }}>
         <HomeNavButton
           onClick={() => navigate('/')}
-          iconSrc="home.webp "
+          iconSrc="home.webp"
         />
         {['Projects'].map((item) => (
           <button
@@ -215,77 +215,19 @@ export default function Portfolio() {
         />
       </nav>
 
-      {/* Hero Section */}
-      <div style={{
-        maxWidth: '900px',
-        margin: '0 auto',
-        padding: '80px 60px 120px',
-      }}>
-        
-        <h1 style={{
-          fontSize: '32px',
-          fontWeight: '500',
-          margin: '0 0 16px 0',
-          lineHeight: '1.3',
-          color: '#e5e7eb',
-          letterSpacing: '-0.5px'
-        }}>
-          William Wei
+      {/* Projects Content */}
+      <div style={{ maxWidth: '900px', margin: '0 auto', padding: '0 60px 60px' }}>
+        <h1 style={{ fontSize: '32px', fontWeight: '500', marginBottom: '30px', color: '#ffffff' }}>
+          Projects
         </h1>
-        
-        <p style={{
-          fontSize: '18px',
-          color: '#9ca3af',
-          marginBottom: '24px',
-          fontWeight: '400'
-        }}>
-          I'm a CS student at University of Western Ontario with a passion for learning and creating new things. Aside from coding and studying,
-          I enjoy playing video games and working out.
+        <p style={{ color: '#9ca3af', fontSize: '16px', lineHeight: '1.7' }}>
+          i love you nina
         </p>
-
-        
-
-
-        {/* Featured Skills/Interests */}
-        {/*}
-        <div style={{
-          display: 'flex',
-          flexWrap: 'wrap',
-          gap: '12px',
-          paddingTop: '40px',
-          borderTop: '1px solid #1f1f1f'
-        }}>
-          {['react', 'javascript', 'ui design', 'web dev', 'photography', 'coffee'].map((skill) => (
-            <div
-              key={skill}
-              style={{
-                backgroundColor: '#1a1a1a',
-                color: '#9ca3af',
-                padding: '10px 20px',
-                borderRadius: '20px',
-                fontSize: '14px',
-                border: '1px solid #2d2d2d'
-              }}
-            >
-              {skill}
-            </div>
-          ))}
-        </div>
-          */}
-
       </div>
-
-      {/* Subtle Background Accent */}
-      <div style={{
-        position: 'fixed',
-        top: '0',
-        right: '0',
-        width: '600px',
-        height: '600px',
-        background: 'radial-gradient(circle, rgba(129, 140, 248, 0.05) 0%, transparent 70%)',
-        pointerEvents: 'none',
-        zIndex: 0
-      }} />
     </div>
   );
 }
+
+<div>
+    <h1>hi</h1>
+</div>

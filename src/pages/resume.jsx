@@ -183,7 +183,7 @@ function Resume() {
       {/* Navigation */}
       <nav style={{
         display: 'flex',
-        justifyContent: 'flex-end',
+        justifyContent: 'center',
         alignItems: 'center',
         padding: '30px 60px',
         gap: '8px'
@@ -199,7 +199,7 @@ function Resume() {
             onMouseEnter={() => setHoveredButton(item)}
             onMouseLeave={() => setHoveredButton(null)}
             onClick={() => {
-              
+              navigate('/projects');
             }}
           >
             {item}
