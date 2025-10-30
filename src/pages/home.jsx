@@ -1,6 +1,110 @@
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 
+function ResumeNavButton({ onClick, iconSrc }) {
+  const [isHovered, setIsHovered] = useState(false);
+
+  const containerStyle = {
+    display: 'flex',
+    alignItems: 'center',
+    gap: '8px',
+    backgroundColor: isHovered ? '#151515' : 'transparent',
+    color: isHovered ? '#e5e7eb' : '#9ca3af',
+    border: 'none',
+    borderRadius: '9999px',
+    padding: '6px',
+    width: isHovered ? '128px' : '36px',
+    transition: 'all 0.25s ease',
+    cursor: 'pointer',
+    overflow: 'hidden'
+  };
+
+  const iconStyle = {
+    width: '24px',
+    height: '24px',
+    borderRadius: '6px',
+    objectFit: 'cover',
+    display: 'block'
+  };
+
+  const labelStyle = {
+    whiteSpace: 'nowrap',
+    fontSize: '14px',
+    fontWeight: 500,
+    opacity: isHovered ? 1 : 0,
+    transform: `translateX(${isHovered ? '0' : '8px'})`,
+    transition: 'opacity 0.2s ease, transform 0.2s ease'
+  };
+
+  return (
+    <button
+      onClick={onClick}
+      onMouseEnter={() => setIsHovered(true)}
+      onMouseLeave={() => setIsHovered(false)}
+      style={containerStyle}
+    >
+      {iconSrc ? (
+        <img src={iconSrc} alt="Resume" style={iconStyle} />
+      ) : (
+        <div style={{ ...iconStyle, background: '#3b82f6' }} />
+      )}
+      <span style={labelStyle}>Resume</span>
+    </button>
+  );
+}
+
+function HomeNavButton({ onClick, iconSrc }) {
+  const [isHovered, setIsHovered] = useState(false);
+
+  const containerStyle = {
+    display: 'flex',
+    alignItems: 'center',
+    gap: '8px',
+    backgroundColor: isHovered ? '#151515' : 'transparent',
+    color: isHovered ? '#e5e7eb' : '#9ca3af',
+    border: 'none',
+    borderRadius: '9999px',
+    padding: '6px',
+    width: isHovered ? '112px' : '36px',
+    transition: 'all 0.25s ease',
+    cursor: 'pointer',
+    overflow: 'hidden'
+  };
+
+  const iconStyle = {
+    width: '24px',
+    height: '24px',
+    borderRadius: '6px',
+    objectFit: 'cover',
+    display: 'block'
+  };
+
+  const labelStyle = {
+    whiteSpace: 'nowrap',
+    fontSize: '14px',
+    fontWeight: 500,
+    opacity: isHovered ? 1 : 0,
+    transform: `translateX(${isHovered ? '0' : '8px'})`,
+    transition: 'opacity 0.2s ease, transform 0.2s ease'
+  };
+
+  return (
+    <button
+      onClick={onClick}
+      onMouseEnter={() => setIsHovered(true)}
+      onMouseLeave={() => setIsHovered(false)}
+      style={containerStyle}
+    >
+      {iconSrc ? (
+        <img src={iconSrc} alt="Home" style={iconStyle} />
+      ) : (
+        <div style={{ ...iconStyle, background: '#22c55e' }} />
+      )}
+      <span style={labelStyle}>Home</span>
+    </button>
+  );
+}
+
 export default function Portfolio() {
   const [hoveredButton, setHoveredButton] = useState(null);
   const navigate = useNavigate();
@@ -32,24 +136,29 @@ export default function Portfolio() {
         padding: '30px 60px',
         gap: '8px'
       }}>
-        {['Home', 'Projects', 'Hobbies', 'Resume'].map((item) => (
+        <HomeNavButton
+          onClick={() => navigate('/')}
+          iconSrc="home.webp "
+        />
+        {['Projects', 'Hobbies'].map((item) => (
           <button
             key={item}
             style={navButtonStyle(hoveredButton === item)}
             onMouseEnter={() => setHoveredButton(item)}
             onMouseLeave={() => setHoveredButton(null)}
             onClick={() => {
-              if (item === 'Resume') {
-                navigate('/resume');
-              } else if (item === 'Home') {
-                navigate('/');
-              } else if (item === 'Hobbies') {
+              if (item === 'Hobbies') {
                 navigate('/hobbies');
-            }}}
+              }
+            }}
           >
             {item}
           </button>
         ))}
+        <ResumeNavButton
+          onClick={() => navigate('/resume')}
+          iconSrc="doc.png"
+        />
       </nav>
 
       {/* Hero Section */}
