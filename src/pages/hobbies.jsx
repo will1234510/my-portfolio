@@ -78,7 +78,7 @@ function Hobbies() {
         {/* 🧩 Add More Sections Later (example placeholder) */}
         {/* 
         <section>
-          <h2>🎧 Music</h2>
+          <h2>Music</h2>
           <p>Some description...</p>
         </section>
         */}
