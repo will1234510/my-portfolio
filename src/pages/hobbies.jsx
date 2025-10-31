@@ -172,6 +172,7 @@ function ProjectsNavButton({ onClick, iconSrc }) {
   const containerStyle = {
     display: 'flex',
     alignItems: 'center',
+    justifyContent: 'center',
     gap: '8px',
     backgroundColor: isHovered ? '#151515' : 'transparent',
     color: isHovered ? '#e5e7eb' : '#9ca3af',
@@ -197,6 +198,8 @@ function ProjectsNavButton({ onClick, iconSrc }) {
     fontSize: '14px',
     fontWeight: 500,
     opacity: isHovered ? 1 : 0,
+    width: isHovered ? 'auto' : 0,
+    marginLeft: isHovered ? '8px' : 0,
     transform: `translateX(${isHovered ? '0' : '8px'})`,
     transition: 'opacity 0.2s ease, transform 0.2s ease'
   };
@@ -262,18 +265,80 @@ function Hobbies() {
 
         {/* Gaming Section */}
         <section style={{ marginBottom: '40px' }}>
-          <h2 style={{ fontSize: '24px', fontWeight: '500', color: '#818cf8', marginBottom: '10px' }}>
+          <h2 style={{ fontSize: '24px', fontWeight: '500', color: '#ffffff', marginBottom: '20px' }}>
             Gaming
           </h2>
-          <p style={{ color: '#9ca3af', fontSize: '16px', lineHeight: '1.7', marginBottom: '10px' }}>
+          <p style={{ color: '#9ca3af', fontSize: '16px', lineHeight: '1.7', marginBottom: '30px' }}>
             I enjoy playing all types of video games. Here are some of my favorites:
           </p>
-          <ul style={{ listStyleType: 'disc', paddingLeft: '20px', color: '#d1d5db' }}>
-            <li>VALORANT</li>
-            <li>League of Legends</li>
-            <li>Overwatch 2</li>
-            <li>osu!</li>
-          </ul>
+          
+          {/* VALORANT */}
+          <div style={{ marginBottom: '40px' }}>
+            <h3 style={{ fontSize: '20px', fontWeight: '500', color: '#ffffff', marginBottom: '16px' }}>
+              VALORANT
+            </h3>
+            <div style={{ 
+              display: 'grid', 
+              gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', 
+              gap: '16px',
+              marginTop: '12px'
+            }}>
+              {/* Add videos/clips here */}
+              {/* Example:
+              <video 
+                controls 
+                style={{ width: '100%', borderRadius: '8px', maxWidth: '600px' }}
+              >
+                <source src="your-video.mp4" type="video/mp4" />
+              </video>
+              */}
+            </div>
+          </div>
+
+          {/* League of Legends */}
+          <div style={{ marginBottom: '40px' }}>
+            <h3 style={{ fontSize: '20px', fontWeight: '500', color: '#ffffff', marginBottom: '16px' }}>
+              League of Legends
+            </h3>
+            <div style={{ 
+              display: 'grid', 
+              gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', 
+              gap: '16px',
+              marginTop: '12px'
+            }}>
+              {/* Add videos/clips here */}
+            </div>
+          </div>
+
+          {/* Overwatch 2 */}
+          <div style={{ marginBottom: '40px' }}>
+            <h3 style={{ fontSize: '20px', fontWeight: '500', color: '#ffffff', marginBottom: '16px' }}>
+              Overwatch 2
+            </h3>
+            <div style={{ 
+              display: 'grid', 
+              gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', 
+              gap: '16px',
+              marginTop: '12px'
+            }}>
+              {/* Add videos/clips here */}
+            </div>
+          </div>
+
+          {/* osu! */}
+          <div style={{ marginBottom: '40px' }}>
+            <h3 style={{ fontSize: '20px', fontWeight: '500', color: '#ffffff', marginBottom: '16px' }}>
+              osu!
+            </h3>
+            <div style={{ 
+              display: 'grid', 
+              gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', 
+              gap: '16px',
+              marginTop: '12px'
+            }}>
+              {/* Add videos/clips here */}
+            </div>
+          </div>
         </section>
 
         {/* 🧩 Add More Sections Later (example placeholder) */}
