@@ -259,13 +259,13 @@ function Hobbies() {
 
       {/* Hobbies Content */}
       <div style={{ maxWidth: '900px', margin: '0 auto', padding: '0 60px 60px' }}>
-        <h1 style={{ fontSize: '32px', fontWeight: '500', marginBottom: '30px', color: '#ffffff' }}>
+        <h1 style={{ fontSize: '32px', fontWeight: '500', marginBottom: '30px', paddingBottom: '20px', borderBottom: '1px solid #2d2d2d', color: '#ffffff' }}>
           My Hobbies
         </h1>
 
         {/* Gaming Section */}
         <section style={{ marginBottom: '40px' }}>
-          <h2 style={{ fontSize: '24px', fontWeight: '500', color: '#ffffff', marginBottom: '20px' }}>
+          <h2 style={{ fontSize: '30px', fontWeight: '500', color: '#ffffff', marginBottom: '20px' }}>
             Gaming
           </h2>
           <p style={{ color: '#9ca3af', fontSize: '16px', lineHeight: '1.7', marginBottom: '30px' }}>
@@ -274,7 +274,7 @@ function Hobbies() {
           
           {/* VALORANT */}
           <div style={{ marginBottom: '40px' }}>
-            <h3 style={{ fontSize: '20px', fontWeight: '500', color: '#ffffff', marginBottom: '16px' }}>
+            <h3 style={{ fontSize: '18px', fontWeight: '500', color: '#ffffff', marginBottom: '16px' }}>
               VALORANT
             </h3>
             <div style={{ 
@@ -297,9 +297,12 @@ function Hobbies() {
 
           {/* League of Legends */}
           <div style={{ marginBottom: '40px' }}>
-            <h3 style={{ fontSize: '20px', fontWeight: '500', color: '#ffffff', marginBottom: '16px' }}>
+            <h3 style={{ fontSize: '18px', fontWeight: '500', color: '#ffffff', marginBottom: '16px' }}>
               League of Legends
             </h3>
+            <p style={{ color: '#9ca3af', fontSize: '16px', lineHeight: '1.7', marginBottom: '30px' }}>
+            I enjoy playing all types of video games. Here are some of my favorites:
+          </p>
             <div style={{ 
               display: 'grid', 
               gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', 
@@ -312,7 +315,7 @@ function Hobbies() {
 
           {/* Overwatch 2 */}
           <div style={{ marginBottom: '40px' }}>
-            <h3 style={{ fontSize: '20px', fontWeight: '500', color: '#ffffff', marginBottom: '16px' }}>
+            <h3 style={{ fontSize: '18px', fontWeight: '500', color: '#ffffff', marginBottom: '16px' }}>
               Overwatch 2
             </h3>
             <div style={{ 
@@ -327,8 +330,22 @@ function Hobbies() {
 
           {/* osu! */}
           <div style={{ marginBottom: '40px' }}>
-            <h3 style={{ fontSize: '20px', fontWeight: '500', color: '#ffffff', marginBottom: '16px' }}>
+            <h3 style={{ fontSize: '18px', fontWeight: '500', color: '#ffffff', marginBottom: '16px' }}>
               osu!
+            </h3>
+            <div style={{ 
+              display: 'grid', 
+              gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', 
+              gap: '16px',
+              marginTop: '12px'
+            }}>
+              {/* Add videos/clips here */}
+            </div>
+          </div>
+          {/* CS */}
+          <div style={{ marginBottom: '40px' }}>
+            <h3 style={{ fontSize: '18px', fontWeight: '500', color: '#ffffff', marginBottom: '16px' }}>
+              CS2/CS:GO
             </h3>
             <div style={{ 
               display: 'grid', 

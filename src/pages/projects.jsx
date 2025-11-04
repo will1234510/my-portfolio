@@ -259,7 +259,7 @@ export default function Projects() {
 
       {/* Projects Content */}
       <div style={{ maxWidth: '900px', margin: '0 auto', padding: '0 60px 60px' }}>
-        <h1 style={{ fontSize: '32px', fontWeight: '500', marginBottom: '30px', color: '#ffffff' }}>
+        <h1 style={{ fontSize: '32px', fontWeight: '500', marginBottom: '30px', paddingBottom: '20px', borderBottom: '1px solid #2d2d2d', color: '#ffffff' }}>
           Projects
         </h1>
         <p style={{ color: '#9ca3af', fontSize: '16px', lineHeight: '1.7' }}>
@@ -270,6 +270,3 @@ export default function Projects() {
   );
 }
 
-<div>
-    <h1>hi</h1>
-</div>

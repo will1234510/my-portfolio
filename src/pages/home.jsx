@@ -268,6 +268,8 @@ export default function Portfolio() {
           fontSize: '32px',
           fontWeight: '500',
           margin: '0 0 16px 0',
+          paddingBottom: '20px',
+          borderBottom: '1px solid #2d2d2d',
           lineHeight: '1.3',
           color: '#e5e7eb',
           letterSpacing: '-0.5px'
