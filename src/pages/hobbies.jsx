@@ -277,6 +277,9 @@ function Hobbies() {
             <h3 style={{ fontSize: '18px', fontWeight: '500', color: '#ffffff', marginBottom: '16px' }}>
               VALORANT
             </h3>
+            <p style={{ color: '#9ca3af', fontSize: '16px', lineHeight: '1.7', marginBottom: '30px' }}>
+              Peak: Immortal 1, 13RR | Current: Unranked
+              </p>
             <div style={{ 
               display: 'grid', 
               gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', 
@@ -300,9 +303,9 @@ function Hobbies() {
             <h3 style={{ fontSize: '18px', fontWeight: '500', color: '#ffffff', marginBottom: '16px' }}>
               League of Legends
             </h3>
-            <p style={{ color: '#9ca3af', fontSize: '16px', lineHeight: '1.7', marginBottom: '30px' }}>
-            I enjoy playing all types of video games. Here are some of my favorites:
-          </p>
+              <p style={{ color: '#9ca3af', fontSize: '16px', lineHeight: '1.7', marginBottom: '30px' }}>
+              Peak: Silver 1 | Current: Silver 1
+              </p>
             <div style={{ 
               display: 'grid', 
               gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', 
@@ -318,6 +321,9 @@ function Hobbies() {
             <h3 style={{ fontSize: '18px', fontWeight: '500', color: '#ffffff', marginBottom: '16px' }}>
               Overwatch 2
             </h3>
+            <p style={{ color: '#9ca3af', fontSize: '16px', lineHeight: '1.7', marginBottom: '30px' }}>
+              Peak: Diamond 5 (Tank), Platinum 3 (DPS), Platinum 1 (Support)| Current: Diamond 5 (Tank), Gold 2 (DPS), Platinum 1 (Support)
+              </p>
             <div style={{ 
               display: 'grid', 
               gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', 
@@ -333,6 +339,9 @@ function Hobbies() {
             <h3 style={{ fontSize: '18px', fontWeight: '500', color: '#ffffff', marginBottom: '16px' }}>
               osu!
             </h3>
+            <p style={{ color: '#9ca3af', fontSize: '16px', lineHeight: '1.7', marginBottom: '30px' }}>
+              Peak: Top 2000 Global, Top 100 Canada| Current: Top 2800 Global, Top 130 Canada
+              </p>
             <div style={{ 
               display: 'grid', 
               gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', 
@@ -347,6 +356,9 @@ function Hobbies() {
             <h3 style={{ fontSize: '18px', fontWeight: '500', color: '#ffffff', marginBottom: '16px' }}>
               CS2/CS:GO
             </h3>
+            <p style={{ color: '#9ca3af', fontSize: '16px', lineHeight: '1.7', marginBottom: '30px' }}>
+              Peak: Gold Nova 3 (Competetive), Unranked (Premier) | Current: Unranked (Competetive), Unranked (Premier)
+              </p>
             <div style={{ 
               display: 'grid', 
               gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', 
@@ -357,7 +369,16 @@ function Hobbies() {
             </div>
           </div>
         </section>
-
+          
+        {/* Gym section*/}
+        <section style={{ marginBottom: '40px' }}>
+          <h2 style={{ fontSize: '30px', fontWeight: '500', color: '#ffffff', marginBottom: '20px' }}>
+            Gym
+          </h2>
+          <p style={{ color: '#9ca3af', fontSize: '16px', lineHeight: '1.7', marginBottom: '30px' }}>
+            I enjoy lifting weights and
+            </p>
+          </section>
         {/* 🧩 Add More Sections Later (example placeholder) */}
         {/* 
         <section>
