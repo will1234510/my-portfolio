@@ -357,7 +357,7 @@ function Hobbies() {
               CS2/CS:GO
             </h3>
             <p style={{ color: '#9ca3af', fontSize: '16px', lineHeight: '1.7', marginBottom: '30px' }}>
-              Peak: Gold Nova 3 (Competetive), Unranked (Premier) | Current: Unranked (Competetive), Unranked (Premier)
+              Peak: Gold Nova 3 (Competitive), Unranked (Premier) | Current: Unranked (Competetive), Unranked (Premier)
               </p>
             <div style={{ 
               display: 'grid', 
