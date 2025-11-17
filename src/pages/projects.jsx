@@ -263,7 +263,7 @@ export default function Projects() {
           Projects
         </h1>
         <p style={{ color: '#9ca3af', fontSize: '16px', lineHeight: '1.7' }}>
-          i love you nina
+          wip
         </p>
       </div>
     </div>

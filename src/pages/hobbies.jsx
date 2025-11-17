@@ -264,21 +264,23 @@ function Hobbies() {
         </h1>
 
         {/* Gaming Section */}
-        <section style={{ marginBottom: '40px' }}>
-          <h2 style={{ fontSize: '30px', fontWeight: '500', color: '#ffffff', marginBottom: '20px' }}>
+        <section style={{ marginBottom: '10px' }}>
+          <h2 style={{ fontSize: '30px', fontWeight: '500', color: '#ffffff', marginBottom: '5px' }}>
             Gaming
           </h2>
-          <p style={{ color: '#9ca3af', fontSize: '16px', lineHeight: '1.7', marginBottom: '30px' }}>
+          <p style={{ marginTop: '0px', color: '#9ca3af', fontSize: '16px', lineHeight: '1.7', marginBottom: '30px' }}>
             I enjoy playing all types of video games. Here are some of my favorites:
           </p>
           
           {/* VALORANT */}
-          <div style={{ marginBottom: '40px' }}>
-            <h3 style={{ fontSize: '18px', fontWeight: '500', color: '#ffffff', marginBottom: '16px' }}>
+          <div style={{ marginBottom: '5px' }}>
+            <h3 style={{ marginTop: '0px', fontSize: '18px', fontWeight: '500', color: '#ffffff', marginBottom: '5px' }}>
               VALORANT
             </h3>
-            <p style={{ color: '#9ca3af', fontSize: '16px', lineHeight: '1.7', marginBottom: '30px' }}>
-              Peak: Immortal 1, 13RR | Current: Unranked
+            <p style={{ marginTop: '0px', color: '#9ca3af', fontSize: '16px', lineHeight: '1.7', marginBottom: '30px' }}>
+              Peak: Immortal 1, 13RR
+              <br/>
+              Current: Unranked
               </p>
             <div style={{ 
               display: 'grid', 
@@ -298,13 +300,15 @@ function Hobbies() {
             </div>
           </div>
 
-          {/* League of Legends */}
-          <div style={{ marginBottom: '40px' }}>
-            <h3 style={{ fontSize: '18px', fontWeight: '500', color: '#ffffff', marginBottom: '16px' }}>
-              League of Legends
+          {/* osu! */}
+          <div style={{ marginBottom: '5px' }}>
+            <h3 style={{ marginTop: '0px', fontSize: '18px', fontWeight: '500', color: '#ffffff', marginBottom: '5px' }}>
+              osu!
             </h3>
-              <p style={{ color: '#9ca3af', fontSize: '16px', lineHeight: '1.7', marginBottom: '30px' }}>
-              Peak: Silver 1 | Current: Silver 1
+            <p style={{ marginTop: '0px', color: '#9ca3af', fontSize: '16px', lineHeight: '1.7', marginBottom: '30px' }}>
+              Peak: Top 2000 Global, Top 100 Canada
+              <br/>
+              Current: Top 2800 Global, Top 130 Canada
               </p>
             <div style={{ 
               display: 'grid', 
@@ -317,12 +321,14 @@ function Hobbies() {
           </div>
 
           {/* Overwatch 2 */}
-          <div style={{ marginBottom: '40px' }}>
-            <h3 style={{ fontSize: '18px', fontWeight: '500', color: '#ffffff', marginBottom: '16px' }}>
+          <div style={{ marginBottom: '5px' }}>
+            <h3 style={{ marginTop: '0px', fontSize: '18px', fontWeight: '500', color: '#ffffff', marginBottom: '5px' }}>
               Overwatch 2
             </h3>
-            <p style={{ color: '#9ca3af', fontSize: '16px', lineHeight: '1.7', marginBottom: '30px' }}>
-              Peak: Diamond 5 (Tank), Platinum 3 (DPS), Platinum 1 (Support)| Current: Diamond 5 (Tank), Gold 2 (DPS), Platinum 1 (Support)
+            <p style={{ marginTop: '0px', color: '#9ca3af', fontSize: '16px', lineHeight: '1.7', marginBottom: '30px' }}>
+              Peak: Diamond 5 (Tank), Platinum 3 (DPS), Platinum 1 (Support)
+              <br/>
+              Current: Diamond 5 (Tank), Gold 2 (DPS), Platinum 1 (Support)
               </p>
             <div style={{ 
               display: 'grid', 
@@ -334,13 +340,15 @@ function Hobbies() {
             </div>
           </div>
 
-          {/* osu! */}
-          <div style={{ marginBottom: '40px' }}>
-            <h3 style={{ fontSize: '18px', fontWeight: '500', color: '#ffffff', marginBottom: '16px' }}>
-              osu!
+          {/* League of Legends */}
+          <div style={{ marginBottom: '5px' }}>
+            <h3 style={{ marginTop: '0px', fontSize: '18px', fontWeight: '500', color: '#ffffff', marginBottom: '5px' }}>
+              League of Legends
             </h3>
-            <p style={{ color: '#9ca3af', fontSize: '16px', lineHeight: '1.7', marginBottom: '30px' }}>
-              Peak: Top 2000 Global, Top 100 Canada| Current: Top 2800 Global, Top 130 Canada
+              <p style={{ marginTop: '0px', color: '#9ca3af', fontSize: '16px', lineHeight: '1.7', marginBottom: '30px' }}>
+              Peak: Silver 1
+              <br/>
+              Current: Silver 1
               </p>
             <div style={{ 
               display: 'grid', 
@@ -353,11 +361,13 @@ function Hobbies() {
           </div>
           {/* CS */}
           <div style={{ marginBottom: '40px' }}>
-            <h3 style={{ fontSize: '18px', fontWeight: '500', color: '#ffffff', marginBottom: '16px' }}>
+            <h3 style={{ marginTop: '0px', fontSize: '18px', fontWeight: '500', color: '#ffffff', marginBottom: '5px' }}>
               CS2/CS:GO
             </h3>
-            <p style={{ color: '#9ca3af', fontSize: '16px', lineHeight: '1.7', marginBottom: '30px' }}>
-              Peak: Gold Nova 3 (Competitive), Unranked (Premier) | Current: Unranked (Competetive), Unranked (Premier)
+            <p style={{ marginTop: '0px', color: '#9ca3af', fontSize: '16px', lineHeight: '1.7', marginBottom: '30px' }}>
+              Peak: Gold Nova 3 (Competitive), Unranked (Premier)
+              <br/>
+              Current: Unranked (Competetive), Unranked (Premier)
               </p>
             <div style={{ 
               display: 'grid', 
@@ -372,13 +382,68 @@ function Hobbies() {
           
         {/* Gym section*/}
         <section style={{ marginBottom: '40px' }}>
+          <h2 style={{ fontSize: '30px', fontWeight: '500', color: '#ffffff', marginBottom: '5px' }}>
+            Working Out
+          </h2>
+          <p style={{ marginTop: '0px', color: '#9ca3af', fontSize: '16px', lineHeight: '1.7', marginBottom: '30px' }}>
+            I enjoy lifting weight, climbing, and breaking personal records.
+            </p>
+            <div style={{ marginBottom: '40px' }}>
+            <h3 style={{ fontSize: '18px', fontWeight: '500', color: '#ffffff', marginBottom: '5px' }}>
+              Lifting
+            </h3>
+            <p style={{ marginTop: '0px', color: '#9ca3af', fontSize: '16px', lineHeight: '1.7', marginBottom: '30px' }}>
+              I started lifting weights September 2022, and I want to keep working on my lifts and breaking new PRs.
+              <br/> <br/>
+              Bench PR: 275 lbs, 125 kg
+              <br/>
+              Squat PR: 330 lbs, 150 kg
+              <br/>
+              Deadlift PR: I don't deadlift
+              </p>
+            <h3 style={{ fontSize: '18px', fontWeight: '500', color: '#ffffff', marginBottom: '5px' }}>
+              Climbing
+              <p style={{ marginTop: '0px', color: '#9ca3af', fontSize: '16px', lineHeight: '1.7', marginBottom: '30px' }}>
+              I started climbing in September 2025, and I plan to keep trying to climb harder grades.
+              <br/> <br/>
+              Current: V3 - V4, 6A - 6B+
+              </p>
+            </h3>
+            {/* add videos/clips here */}
+            <div style={{ 
+              display: 'grid', 
+              gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', 
+              gap: '16px',
+              marginTop: '12px'
+            }}></div>
+            </div>
+          </section>
+
+          {/* music section*/}
+        <section style={{ marginBottom: '40px' }}>
           <h2 style={{ fontSize: '30px', fontWeight: '500', color: '#ffffff', marginBottom: '20px' }}>
-            Gym
+            Music
           </h2>
           <p style={{ color: '#9ca3af', fontSize: '16px', lineHeight: '1.7', marginBottom: '30px' }}>
-            I enjoy lifting weights and
+            get spotify api for something idk
             </p>
+            <div style={{ marginBottom: '40px' }}>
+            <h3 style={{ fontSize: '18px', fontWeight: '500', color: '#ffffff', marginBottom: '16px' }}>
+              dddddddd
+            </h3>
+            <p style={{ color: '#9ca3af', fontSize: '16px', lineHeight: '1.7', marginBottom: '30px' }}>
+              hi
+              </p>
+            <div style={{ 
+              display: 'grid', 
+              gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', 
+              gap: '16px',
+              marginTop: '12px'
+            }}></div>
+            </div>
           </section>
+
+
         {/* 🧩 Add More Sections Later (example placeholder) */}
         {/* 
         <section>
