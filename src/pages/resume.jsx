@@ -314,8 +314,11 @@ function Resume() {
               <strong style={{ color: colors.text }}>University of Western Ontario</strong>
               <span style={{ color: colors.textSecondary, fontSize: '14px' }}>Sept 2024 – April 2028</span>
             </div>
-            <div style={{ color: colors.textSecondary, fontSize: '14px' }}>
+            <div style={{ color: colors.textSecondary, fontSize: '14px', marginBottom: '8px' }}>
               Bachelor of Science in Computer Science
+            </div>
+            <div style={{ color: colors.textSecondary, fontSize: '14px' }}>
+              Relevant Courses: Data Structures and Algorithms, Software Tools and System Programming, Information Systems and Design, Applied Logic for Computer Science
             </div>
           </div>
           <div>
@@ -332,7 +335,7 @@ function Resume() {
         {/* Experience */}
         <section style={{ marginBottom: '40px' }}>
           <h2 style={{ fontSize: '25px', fontWeight: '500', marginBottom: '20px', color: colors.textPrimary }}>
-            Work Experience
+            Experience
           </h2>
           
           {/* Warehouse Labour */}
@@ -347,7 +350,7 @@ function Resume() {
             <ul style={{ color: colors.textSecondary, fontSize: '14px', lineHeight: '1.6', paddingLeft: '20px' }}>
               <li>Increased lower rail detailing rate by over 50 percent, processing over 3000 pieces a week</li>
               <li>Sorted raw materials and finished parts to support assembly lines</li>
-              <li>Operated handheld power tools to grind and detail automotive components</li>
+              <li>Operated handheld power tools to grind and detail automotive components according to specifications</li>
             </ul>
           </div>
 
@@ -362,12 +365,124 @@ function Resume() {
             </div>
             <ul style={{ color: colors.textSecondary, fontSize: '14px', lineHeight: '1.6', paddingLeft: '20px' }}>
               <li>Assisted in transporting tools and moving materials to construction projects</li>
-              <li>Performed post-construction cleaning and debris removal in compliance with safety standards</li>
-              <li>Provided support to homeowners, addressing questions and improving customer satisfaction</li>
+              <li>Performed post-construction cleaning, debris removal, and site preparation in compliance with safety standards</li>
+              <li>Provided informative support to homeowners, addressing questions and improving customer satisfaction</li>
+            </ul>
+          </div>
+        </section>
+
+        {/* Projects */}
+        <section style={{ marginBottom: '40px' }}>
+          <h2 style={{ fontSize: '25px', fontWeight: '500', marginBottom: '20px', color: colors.textPrimary }}>
+            Projects
+          </h2>
+          
+          <div style={{ marginBottom: '25px' }}>
+            <strong style={{ color: colors.text }}>Personal Website</strong>
+            <span style={{ color: colors.textSecondary, fontSize: '13px', marginLeft: '10px' }}>React, Node.js, JavaScript, HTML/CSS, Git, Vercel</span>
+            <ul style={{ color: colors.textSecondary, fontSize: '14px', lineHeight: '1.6', paddingLeft: '20px', marginTop: '8px' }}>
+              <li>Designed and developed a fully responsive personal portfolio website to showcase projects, experience, and technical skills</li>
+              <li>Built a modern frontend using React and Node.js and optimized state management</li>
+              <li>Integrated Git-based version control and deployed continuous updates through Vercel, leveraging its CI/CD workflows for seamless production releases</li>
             </ul>
           </div>
 
-          {/* Security Volunteer */}
+          <div style={{ marginBottom: '25px' }}>
+            <strong style={{ color: colors.text }}>Teaching Assistant App</strong>
+            <span style={{ color: colors.textSecondary, fontSize: '13px', marginLeft: '10px' }}>Python, HTML/CSS</span>
+            <ul style={{ color: colors.textSecondary, fontSize: '14px', lineHeight: '1.6', paddingLeft: '20px', marginTop: '8px' }}>
+              <li>Awarded 1st Place at NRG Hackathon for innovative project development, creativity, and prompt presentation</li>
+              <li>Led a team of 4 developers in building a web-based platform designed to assist teachers with grade management and performance analysis</li>
+              <li>Developed features to input, store, and calculate student grades and averages, determine required scores to meet user-inputted grade thresholds, and provide constructive feedback to student work</li>
+              <li>Engineered a full-stack solution using HTML/CSS, and Python</li>
+            </ul>
+          </div>
+
+          <div style={{ marginBottom: '25px' }}>
+            <strong style={{ color: colors.text }}>Distraction Tracker</strong>
+            <span style={{ color: colors.textSecondary, fontSize: '13px', marginLeft: '10px' }}>Python</span>
+            <ul style={{ color: colors.textSecondary, fontSize: '14px', lineHeight: '1.6', paddingLeft: '20px', marginTop: '8px' }}>
+              <li>Built a desktop tool that monitors user focus by tracking window-switching activity during study/work sessions</li>
+              <li>Used Python libraries such as psutil and pygetwindow to identify foreground applications and log distractions</li>
+              <li>Calculated a focus score and exported session summaries with timestamps and focus rates</li>
+            </ul>
+          </div>
+
+          <div style={{ marginBottom: '25px' }}>
+            <strong style={{ color: colors.text }}>Weather App</strong>
+            <span style={{ color: colors.textSecondary, fontSize: '13px', marginLeft: '10px' }}>Python</span>
+            <ul style={{ color: colors.textSecondary, fontSize: '14px', lineHeight: '1.6', paddingLeft: '20px', marginTop: '8px' }}>
+              <li>Developed a simple desktop application using Python to see weather in certain areas of the world</li>
+              <li>Implemented weatherapi API to fetch current weather data, including temperature, humidity, wind speed, and weather conditions</li>
+              <li>Optimized API calls to reduce redundancy</li>
+            </ul>
+          </div>
+        </section>
+
+        {/* Skills */}
+        <section style={{ marginBottom: '40px' }}>
+          <h2 style={{ fontSize: '25px', fontWeight: '500', marginBottom: '20px', color: colors.textPrimary }}>
+            Skills
+          </h2>
+          
+          <div style={{ marginBottom: '20px' }}>
+            <strong style={{ color: colors.text, display: 'block', marginBottom: '8px' }}>
+              Technical Skills
+            </strong>
+            <div style={{ color: colors.textSecondary, fontSize: '14px', lineHeight: '1.6' }}>
+              <div><strong>Languages:</strong> Java, Python, C++, JavaScript, HTML/CSS, Bash</div>
+              <div><strong>Frameworks:</strong> React, TailwindCSS, FastAPI</div>
+              <div><strong>Tools:</strong> Git, Node.js, Tailwind, Vercel</div>
+              <div><strong>Office:</strong> Excel, Word, Powerpoint, Photoshop, Audacity</div>
+            </div>
+          </div>
+        </section>
+
+        {/* Certifications */}
+        <section style={{ marginBottom: '40px' }}>
+          <h2 style={{ fontSize: '25px', fontWeight: '500', marginBottom: '20px', color: colors.textPrimary }}>
+            Certifications
+          </h2>
+          <ul style={{ color: colors.textSecondary, fontSize: '14px', lineHeight: '1.6', paddingLeft: '20px' }}>
+            <li>WHMIS, 2025</li>
+          </ul>
+        </section>
+
+        {/* Clubs */}
+        <section style={{ marginBottom: '40px' }}>
+          <h2 style={{ fontSize: '25px', fontWeight: '500', marginBottom: '20px', color: colors.textPrimary }}>
+            Clubs
+          </h2>
+          
+          <div style={{ marginBottom: '25px' }}>
+            <strong style={{ color: colors.text, display: 'block', marginBottom: '8px' }}>
+              NHS Computer Science Club
+            </strong>
+            <ul style={{ color: colors.textSecondary, fontSize: '14px', lineHeight: '1.6', paddingLeft: '20px' }}>
+              <li>Won the NRG Hackathon, securing 1st place in project development, creativity, and prompt presentation</li>
+              <li>Won and participated in club coding competitions focused on algorithmic problem-solving and time-efficient solutions</li>
+              <li>Practiced competitive programming questions, including questions from the CCC (Canadian Computing Competition), and LeetCode</li>
+              <li>Mentored new members by introducing them to core programming concepts</li>
+            </ul>
+          </div>
+
+          <div>
+            <strong style={{ color: colors.text, display: 'block', marginBottom: '8px' }}>
+              UWO Dragon Boat Club
+            </strong>
+            <ul style={{ color: colors.textSecondary, fontSize: '14px', lineHeight: '1.6', paddingLeft: '20px' }}>
+              <li>Actively trained four days per week in preparation for fitness tests and tryouts</li>
+              <li>Developed teamwork, discipline, and communication through regular on-water and dryland training sessions</li>
+            </ul>
+          </div>
+        </section>
+
+        {/* Volunteering */}
+        <section style={{ marginBottom: '40px' }}>
+          <h2 style={{ fontSize: '25px', fontWeight: '500', marginBottom: '20px', color: colors.textPrimary }}>
+            Volunteering
+          </h2>
+          
           <div style={{ marginBottom: '30px' }}>
             <div style={{ display: 'flex', justifyContent: 'space-between', marginBottom: '8px' }}>
               <strong style={{ color: colors.text }}>Security Volunteer</strong>
@@ -381,7 +496,6 @@ function Resume() {
             </ul>
           </div>
 
-          {/* Town Volunteer */}
           <div style={{ marginBottom: '30px' }}>
             <div style={{ display: 'flex', justifyContent: 'space-between', marginBottom: '8px' }}>
               <strong style={{ color: colors.text }}>Town of Aurora Volunteer</strong>
@@ -393,101 +507,18 @@ function Resume() {
             <ul style={{ color: colors.textSecondary, fontSize: '14px', lineHeight: '1.6', paddingLeft: '20px' }}>
               <li>Conducted educational demonstrations on animal functions for children</li>
               <li>Organized and guided chess activities at Aurora Public Library</li>
-              <li>Managed sorting and distribution of vegetables at York Region Food Network</li>
+              <li>Managed the sorting and distribution of vegetables at York Region Food Network</li>
             </ul>
           </div>
         </section>
 
-        {/* Projects */}
-        <section style={{ marginBottom: '40px' }}>
-          <h2 style={{ fontSize: '25px', fontWeight: '500', marginBottom: '20px', color: colors.textPrimary }}>
-            Projects
-          </h2>
-          
-          <div style={{ marginBottom: '25px' }}>
-            <strong style={{ color: colors.text }}>Teaching Assistant Website</strong>
-            <span style={{ color: colors.textSecondary, fontSize: '13px', marginLeft: '10px' }}>Python, HTML/CSS</span>
-            <ul style={{ color: colors.textSecondary, fontSize: '14px', lineHeight: '1.6', paddingLeft: '20px', marginTop: '8px' }}>
-              <li>Awarded 1st Place at NRG Hackathon for innovative project development and presentation</li>
-              <li>Led a team of 4 developers building a web platform for grade management and analysis</li>
-              <li>Developed features to calculate grades, determine required scores, and provide feedback</li>
-            </ul>
-          </div>
-
-          <div style={{ marginBottom: '25px' }}>
-            <strong style={{ color: colors.text }}>Distraction Tracker</strong>
-            <span style={{ color: colors.textSecondary, fontSize: '13px', marginLeft: '10px' }}>Python</span>
-            <ul style={{ color: colors.textSecondary, fontSize: '14px', lineHeight: '1.6', paddingLeft: '20px', marginTop: '8px' }}>
-              <li>Built desktop tool tracking window-switching activity during study sessions</li>
-              <li>Used psutil and pygetwindow to identify applications and log distractions</li>
-              <li>Calculated focus score and exported session summaries with timestamps</li>
-            </ul>
-          </div>
-
-          <div style={{ marginBottom: '25px' }}>
-            <strong style={{ color: colors.text }}>Weather App</strong>
-            <span style={{ color: colors.textSecondary, fontSize: '13px', marginLeft: '10px' }}>Python</span>
-            <ul style={{ color: colors.textSecondary, fontSize: '14px', lineHeight: '1.6', paddingLeft: '20px', marginTop: '8px' }}>
-              <li>Developed desktop application to display weather data for locations worldwide</li>
-              <li>Implemented weatherapi API to fetch temperature, humidity, and wind speed</li>
-              <li>Optimized API calls to minimize latency for repeat locations</li>
-            </ul>
-          </div>
-
-          <div style={{ marginBottom: '25px' }}>
-            <strong style={{ color: colors.text }}>Java Calculator</strong>
-            <span style={{ color: colors.textSecondary, fontSize: '13px', marginLeft: '10px' }}>Java</span>
-            <ul style={{ color: colors.textSecondary, fontSize: '14px', lineHeight: '1.6', paddingLeft: '20px', marginTop: '8px' }}>
-              <li>Developed user-friendly calculator for basic arithmetic operations</li>
-              <li>Engineered GUI with NetBeans IDE using event-driven programming</li>
-            </ul>
-          </div>
-        </section>
-
-        {/* Skills */}
-        <section style={{ marginBottom: '40px' }}>
-          <h2 style={{ fontSize: '25px', fontWeight: '500', marginBottom: '20px', color: colors.textPrimary }}>
-            Technical Skills
-          </h2>
-          
-          <div style={{ marginBottom: '20px' }}>
-            <strong style={{ color: colors.text, display: 'block', marginBottom: '8px' }}>
-              
-            </strong>
-            <div style={{ color: colors.textSecondary, fontSize: '14px', lineHeight: '1.6' }}>
-              <div><strong>Languages:</strong> Java, Python, C++, C, JavaScript, HTML/CSS, Bash</div>
-              <div><strong>Tools:</strong> Git, Node.js</div>
-              <div><strong>Office:</strong> Excel, Word, Powerpoint, Photoshop, Audacity</div>
-            </div>
-          </div>
-        </section>
-
-        {/* Clubs */}
+        {/* References */}
         <section>
           <h2 style={{ fontSize: '25px', fontWeight: '500', marginBottom: '20px', color: colors.textPrimary }}>
-            Clubs
+            References
           </h2>
-          
-          <div style={{ marginBottom: '25px' }}>
-            <strong style={{ color: colors.text, display: 'block', marginBottom: '8px' }}>
-              NHS Computer Science Club
-            </strong>
-            <ul style={{ color: colors.textSecondary, fontSize: '14px', lineHeight: '1.6', paddingLeft: '20px' }}>
-              <li>Won NRG Hackathon, securing 1st place in project development and presentation</li>
-              <li>Participated in coding competitions focused on algorithmic problem-solving</li>
-              <li>Practiced CCC and LeetCode problems</li>
-              <li>Mentored new members on core programming concepts</li>
-            </ul>
-          </div>
-
-          <div>
-            <strong style={{ color: colors.text, display: 'block', marginBottom: '8px' }}>
-              UWO Dragon Boat Club
-            </strong>
-            <ul style={{ color: colors.textSecondary, fontSize: '14px', lineHeight: '1.6', paddingLeft: '20px' }}>
-              <li>Trained four days per week for fitness tests and tryouts</li>
-              <li>Developed teamwork and discipline through on-water and dryland training</li>
-            </ul>
+          <div style={{ color: colors.textSecondary, fontSize: '14px' }}>
+            Available upon request
           </div>
         </section>
       </div>

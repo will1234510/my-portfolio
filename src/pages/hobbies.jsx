@@ -343,7 +343,7 @@ function Hobbies() {
             <p style={{ marginTop: '0px', color: colors.textSecondary, fontSize: '16px', lineHeight: '1.7', marginBottom: '30px' }}>
               Peak: Top 2000 Global, Top 100 Canada
               <br/>
-              Current: Top 2800 Global, Top 130 Canada
+              Current: Top 3500 Global, Top 150 Canada
               </p>
             <div style={{ 
               display: 'grid', 
