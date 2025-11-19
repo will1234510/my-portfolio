@@ -1,16 +1,39 @@
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
+import { useTheme } from '../contexts/ThemeContext';
 
-function ResumeNavButton({ onClick, iconSrc }) {
+// Helper function to get the correct icon based on theme
+function getIconPath(baseIcon, isDark) {
+  if (isDark) {
+    return baseIcon;
+  }
+  // For light mode, use dark version of icons
+  if (baseIcon === 'home.webp') {
+    return 'homeDark.png';
+  }
+  if (baseIcon === 'project.png') {
+    return 'projectDark.png';
+  }
+  if (baseIcon === 'game.png') {
+    return 'gameDark.png';
+  }
+  if (baseIcon === 'doc.png') {
+    return 'docDark.png';
+  }
+  return baseIcon;
+}
+
+function ResumeNavButton({ onClick, iconSrc, colors, isDark }) {
   const [isHovered, setIsHovered] = useState(false);
+  const actualIconSrc = getIconPath(iconSrc, isDark);
 
   const containerStyle = {
     display: 'flex',
     alignItems: 'center',
     justifyContent: 'center',
     gap: '8px',
-    backgroundColor: isHovered ? '#151515' : 'transparent',
-    color: isHovered ? '#e5e7eb' : '#9ca3af',
+    backgroundColor: isHovered ? colors.navHover : 'transparent',
+    color: isHovered ? colors.text : colors.textSecondary,
     border: 'none',
     borderRadius: '9999px',
     padding: '6px',
@@ -46,8 +69,8 @@ function ResumeNavButton({ onClick, iconSrc }) {
       onMouseLeave={() => setIsHovered(false)}
       style={containerStyle}
     >
-      {iconSrc ? (
-        <img src={iconSrc} alt="Resume" style={iconStyle} />
+      {actualIconSrc ? (
+        <img src={actualIconSrc} alt="Resume" style={iconStyle} />
       ) : (
         <div style={{ ...iconStyle, background: '#3b82f6' }} />
       )}
@@ -56,16 +79,17 @@ function ResumeNavButton({ onClick, iconSrc }) {
   );
 }
 
-function HomeNavButton({ onClick, iconSrc }) {
+function HomeNavButton({ onClick, iconSrc, colors, isDark }) {
   const [isHovered, setIsHovered] = useState(false);
+  const actualIconSrc = getIconPath(iconSrc, isDark);
 
   const containerStyle = {
     display: 'flex',
     alignItems: 'center',
     justifyContent: 'center',
     gap: '8px',
-    backgroundColor: isHovered ? '#151515' : 'transparent',
-    color: isHovered ? '#e5e7eb' : '#9ca3af',
+    backgroundColor: isHovered ? colors.navHover : 'transparent',
+    color: isHovered ? colors.text : colors.textSecondary,
     border: 'none',
     borderRadius: '9999px',
     padding: '6px',
@@ -101,8 +125,8 @@ function HomeNavButton({ onClick, iconSrc }) {
       onMouseLeave={() => setIsHovered(false)}
       style={containerStyle}
     >
-      {iconSrc ? (
-        <img src={iconSrc} alt="Home" style={iconStyle} />
+      {actualIconSrc ? (
+        <img src={actualIconSrc} alt="Home" style={iconStyle} />
       ) : (
         <div style={{ ...iconStyle, background: '#22c55e' }} />
       )}
@@ -111,16 +135,17 @@ function HomeNavButton({ onClick, iconSrc }) {
   );
 }
 
-function HobbiesNavButton({ onClick, iconSrc }) {
+function HobbiesNavButton({ onClick, iconSrc, colors, isDark }) {
   const [isHovered, setIsHovered] = useState(false);
+  const actualIconSrc = getIconPath(iconSrc, isDark);
 
   const containerStyle = {
     display: 'flex',
     alignItems: 'center',
     justifyContent: 'center',
     gap: '8px',
-    backgroundColor: isHovered ? '#151515' : 'transparent',
-    color: isHovered ? '#e5e7eb' : '#9ca3af',
+    backgroundColor: isHovered ? colors.navHover : 'transparent',
+    color: isHovered ? colors.text : colors.textSecondary,
     border: 'none',
     borderRadius: '9999px',
     padding: '6px',
@@ -156,8 +181,8 @@ function HobbiesNavButton({ onClick, iconSrc }) {
       onMouseLeave={() => setIsHovered(false)}
       style={containerStyle}
     >
-      {iconSrc ? (
-        <img src={iconSrc} alt="Hobbies" style={iconStyle} />
+      {actualIconSrc ? (
+        <img src={actualIconSrc} alt="Hobbies" style={iconStyle} />
       ) : (
         <div style={{ ...iconStyle, background: '#a855f7' }} />
       )}
@@ -166,16 +191,17 @@ function HobbiesNavButton({ onClick, iconSrc }) {
   );
 }
 
-function ProjectsNavButton({ onClick, iconSrc }) {
+function ProjectsNavButton({ onClick, iconSrc, colors, isDark }) {
   const [isHovered, setIsHovered] = useState(false);
+  const actualIconSrc = getIconPath(iconSrc, isDark);
 
   const containerStyle = {
     display: 'flex',
     alignItems: 'center',
     justifyContent: 'center',
     gap: '8px',
-    backgroundColor: isHovered ? '#151515' : 'transparent',
-    color: isHovered ? '#e5e7eb' : '#9ca3af',
+    backgroundColor: isHovered ? colors.navHover : 'transparent',
+    color: isHovered ? colors.text : colors.textSecondary,
     border: 'none',
     borderRadius: '9999px',
     padding: '6px',
@@ -211,8 +237,8 @@ function ProjectsNavButton({ onClick, iconSrc }) {
       onMouseLeave={() => setIsHovered(false)}
       style={containerStyle}
     >
-      {iconSrc ? (
-        <img src={iconSrc} alt="Projects" style={iconStyle} />
+      {actualIconSrc ? (
+        <img src={actualIconSrc} alt="Projects" style={iconStyle} />
       ) : (
         <div style={{ ...iconStyle, background: '#f59e0b' }} />
       )}
@@ -223,12 +249,13 @@ function ProjectsNavButton({ onClick, iconSrc }) {
 
 export default function Portfolio() {
   const navigate = useNavigate();
+  const { colors, isDark } = useTheme();
 
   return (
     <div style={{
-      backgroundColor: '#0f0f0f',
+      backgroundColor: colors.background,
       minHeight: '100vh',
-      color: '#ffffff',
+      color: colors.text,
       fontFamily: 'system-ui, -apple-system, sans-serif'
     }}>
       {/* Navigation */}
@@ -242,18 +269,26 @@ export default function Portfolio() {
         <HomeNavButton
           onClick={() => navigate('/')}
           iconSrc="home.webp"
+          colors={colors}
+          isDark={isDark}
         />
         <ProjectsNavButton
           onClick={() => navigate('/projects')}
           iconSrc="project.png"
+          colors={colors}
+          isDark={isDark}
         />
         <HobbiesNavButton
           onClick={() => navigate('/hobbies')}
           iconSrc="game.png"
+          colors={colors}
+          isDark={isDark}
         />
         <ResumeNavButton
           onClick={() => navigate('/resume')}
           iconSrc="doc.png"
+          colors={colors}
+          isDark={isDark}
         />
       </nav>
 
@@ -269,9 +304,9 @@ export default function Portfolio() {
           fontWeight: '500',
           margin: '0 0 16px 0',
           paddingBottom: '20px',
-          borderBottom: '1px solid #2d2d2d',
+          borderBottom: `1px solid ${colors.border}`,
           lineHeight: '1.3',
-          color: '#e5e7eb',
+          color: colors.textPrimary,
           letterSpacing: '-0.5px'
         }}>
           William Wei
@@ -279,7 +314,7 @@ export default function Portfolio() {
         
         <p style={{
           fontSize: '18px',
-          color: '#9ca3af',
+          color: colors.textSecondary,
           marginBottom: '24px',
           fontWeight: '400'
         }}>
