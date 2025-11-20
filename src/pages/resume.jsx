@@ -317,9 +317,9 @@ function Resume() {
             <div style={{ color: colors.textSecondary, fontSize: '14px', marginBottom: '8px' }}>
               Bachelor of Science in Computer Science
             </div>
-            <div style={{ color: colors.textSecondary, fontSize: '14px' }}>
-              Relevant Courses: Data Structures and Algorithms, Software Tools and System Programming, Information Systems and Design, Applied Logic for Computer Science
-            </div>
+            <ul style={{ color: colors.textSecondary, fontSize: '14px', lineHeight: '1.6', paddingLeft: '20px' }}>
+              <li>Relevant Courses: Data Structures and Algorithms, Software Tools and System Programming, Information Systems and Design, Applied Logic for Computer Science</li>
+            </ul>
           </div>
           <div>
             <div style={{ display: 'flex', justifyContent: 'space-between', marginBottom: '8px' }}>

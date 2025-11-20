@@ -2,6 +2,7 @@ import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useTheme } from '../contexts/ThemeContext';
 
+<title>William Wei</title>
 // Helper function to get the correct icon based on theme
 function getIconPath(baseIcon, isDark) {
   if (isDark) {
