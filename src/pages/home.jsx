@@ -10,12 +10,11 @@ export default function Portfolio() {
         maxWidth: '900px',
         width: '100%', // Ensures fluid resizing
         margin: '0 auto',
-        paddingTop: '50px', 
       }}>
         <title>William Wei</title>
         
         <h1 style={{
-          fontSize: 'clamp(28px, 5vw, 32px)', // Title also scales slightly
+          fontSize: '32px',
           fontWeight: '500',
           margin: '0 0 16px 0',
           paddingBottom: '20px',

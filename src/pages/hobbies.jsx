@@ -7,7 +7,7 @@ function Hobbies() {
   return (
     <Layout>
       <div style={{ maxWidth: '900px', width: '100%', margin: '0 auto' }}>
-        <h1 style={{ fontSize: '32px', fontWeight: '500', marginBottom: '30px', paddingBottom: '20px', borderBottom: `1px solid ${colors.border}`, color: colors.textPrimary }}>
+        <h1 style={{ fontSize: '32px', fontWeight: '500', margin: '0 0 16px 0', paddingBottom: '20px', borderBottom: `1px solid ${colors.border}`, color: colors.textPrimary, lineHeight: '1.3', letterSpacing: '-0.5px' }}>
           My Hobbies (wip)
         </h1>
 

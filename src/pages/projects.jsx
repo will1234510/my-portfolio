@@ -85,13 +85,14 @@ export default function Projects() {
 
   return (
     <Layout>
-        <h1 style={{ fontSize: '32px', fontWeight: '500', marginBottom: '40px', paddingBottom: '20px', borderBottom: `1px solid ${colors.border}`, color: colors.textPrimary }}>
-          Projects
-        </h1>
+        <div style={{ maxWidth: '900px', width: '100%', margin: '0 auto' }}>
+          <h1 style={{ fontSize: '32px', fontWeight: '500', margin: '0 0 16px 0', paddingBottom: '20px', borderBottom: `1px solid ${colors.border}`, color: colors.textPrimary, lineHeight: '1.3', letterSpacing: '-0.5px' }}>
+            Projects
+          </h1>
 
-        <div style={{ 
-          // --- PINTEREST / GRID LAYOUT ---
-          display: 'grid',
+          <div style={{ 
+            // --- PINTEREST / GRID LAYOUT ---
+            display: 'grid',
           // This line creates the magic:
           // It creates as many columns as fit. 
           // Each column is at least 350px wide. 
@@ -107,6 +108,7 @@ export default function Projects() {
             />
           ))}
         </div>
+      </div>
     </Layout>
   );
 }

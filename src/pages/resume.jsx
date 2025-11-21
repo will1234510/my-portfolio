@@ -8,8 +8,8 @@ function Resume() {
     <Layout>
       <div style={{ maxWidth: '900px', width: '100%', margin: '0 auto' }}>
         {/* Header */}
-        <div style={{ marginBottom: '50px', borderBottom: `1px solid ${colors.border}`, paddingBottom: '30px' }}>
-          <h1 style={{ fontSize: '32px', fontWeight: '500', marginBottom: '12px', color: colors.textPrimary }}>
+        <div style={{ paddingBottom: '20px', borderBottom: `1px solid ${colors.border}`, marginBottom: '16px' }}>
+          <h1 style={{ fontSize: '32px', fontWeight: '500', marginBottom: '12px', color: colors.textPrimary, lineHeight: '1.3', letterSpacing: '-0.5px', marginTop: 0 }}>
             William Wei
           </h1>
           <div style={{ color: colors.textSecondary, fontSize: '14px' }}>
