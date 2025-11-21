@@ -1,307 +1,112 @@
 import { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
 import { useTheme } from '../contexts/ThemeContext';
+import Layout from '../components/Layout';
 
-// Helper function to get the correct icon based on theme
-function getIconPath(baseIcon, isDark) {
-  if (isDark) {
-    return baseIcon;
-  }
-  // For light mode, use dark version of icons
-  if (baseIcon === 'home.webp') {
-    return 'homeDark.png';
-  }
-  if (baseIcon === 'project.png') {
-    return 'projectDark.png';
-  }
-  if (baseIcon === 'game.png') {
-    return 'gameDark.png';
-  }
-  if (baseIcon === 'doc.png') {
-    return 'docDark.png';
-  }
-  return baseIcon;
-}
-
-function ResumeNavButton({ onClick, iconSrc, colors, isDark }) {
-  const actualIconSrc = getIconPath(iconSrc, isDark);
+function ProjectCard({ title, tech, description, imageSrc, colors }) {
   const [isHovered, setIsHovered] = useState(false);
 
-  const containerStyle = {
-    display: 'flex',
-    alignItems: 'center',
-    justifyContent: 'center',
-    gap: '8px',
-    backgroundColor: isHovered ? colors.navHover : 'transparent',
-    color: isHovered ? colors.text : colors.textSecondary,
-    border: 'none',
-    borderRadius: '9999px',
-    padding: '6px',
-    width: isHovered ? '128px' : '36px',
-    transition: 'all 0.25s ease',
-    cursor: 'pointer',
-    overflow: 'hidden'
-  };
-
-  const iconStyle = {
-    width: '24px',
-    height: '24px',
-    borderRadius: '6px',
-    objectFit: 'cover',
-    display: 'block'
-  };
-
-  const labelStyle = {
-    whiteSpace: 'nowrap',
-    fontSize: '14px',
-    fontWeight: 500,
-    opacity: isHovered ? 1 : 0,
-    width: isHovered ? 'auto' : 0,
-    marginLeft: isHovered ? '8px' : 0,
-    transform: `translateX(${isHovered ? '0' : '8px'})`,
-    transition: 'opacity 0.2s ease, transform 0.2s ease'
-  };
-
   return (
-    <button
-      onClick={onClick}
+    <div 
+      style={{ 
+        width: '100%', 
+        // Removed the giant marginBottom to let Grid handle spacing
+      }}
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
-      style={containerStyle}
     >
-      {actualIconSrc ? (
-        <img src={actualIconSrc} alt="Resume" style={iconStyle} />
-      ) : (
-        <div style={{ ...iconStyle, background: '#3b82f6' }} />
-      )}
-      <span style={labelStyle}>Resume</span>
-    </button>
-  );
-}
-
-function HomeNavButton({ onClick, iconSrc, colors, isDark }) {
-  const [isHovered, setIsHovered] = useState(false);
-  const actualIconSrc = getIconPath(iconSrc, isDark);
-
-  const containerStyle = {
-    display: 'flex',
-    alignItems: 'center',
-    justifyContent: 'center',
-    gap: '8px',
-    backgroundColor: isHovered ? colors.navHover : 'transparent',
-    color: isHovered ? colors.text : colors.textSecondary,
-    border: 'none',
-    borderRadius: '9999px',
-    padding: '6px',
-    width: isHovered ? '112px' : '36px',
-    transition: 'all 0.25s ease',
-    cursor: 'pointer',
-    overflow: 'hidden'
-  };
-
-  const iconStyle = {
-    width: '24px',
-    height: '24px',
-    borderRadius: '6px',
-    objectFit: 'cover',
-    display: 'block'
-  };
-
-  const labelStyle = {
-    whiteSpace: 'nowrap',
-    fontSize: '14px',
-    fontWeight: 500,
-    opacity: isHovered ? 1 : 0,
-    width: isHovered ? 'auto' : 0,
-    marginLeft: isHovered ? '8px' : 0,
-    transform: `translateX(${isHovered ? '0' : '8px'})`,
-    transition: 'opacity 0.2s ease, transform 0.2s ease'
-  };
-
-  return (
-    <button
-      onClick={onClick}
-      onMouseEnter={() => setIsHovered(true)}
-      onMouseLeave={() => setIsHovered(false)}
-      style={containerStyle}
-    >
-      {actualIconSrc ? (
-        <img src={actualIconSrc} alt="Home" style={iconStyle} />
-      ) : (
-        <div style={{ ...iconStyle, background: '#22c55e' }} />
-      )}
-      <span style={labelStyle}>Home</span>
-    </button>
-  );
-}
-
-function HobbiesNavButton({ onClick, iconSrc, colors, isDark }) {
-  const [isHovered, setIsHovered] = useState(false);
-  const actualIconSrc = getIconPath(iconSrc, isDark);
-
-  const containerStyle = {
-    display: 'flex',
-    alignItems: 'center',
-    justifyContent: 'center',
-    gap: '8px',
-    backgroundColor: isHovered ? colors.navHover : 'transparent',
-    color: isHovered ? colors.text : colors.textSecondary,
-    border: 'none',
-    borderRadius: '9999px',
-    padding: '6px',
-    width: isHovered ? '124px' : '36px',
-    transition: 'all 0.25s ease',
-    cursor: 'pointer',
-    overflow: 'hidden'
-  };
-
-  const iconStyle = {
-    width: '24px',
-    height: '24px',
-    borderRadius: '6px',
-    objectFit: 'cover',
-    display: 'block'
-  };
-
-  const labelStyle = {
-    whiteSpace: 'nowrap',
-    fontSize: '14px',
-    fontWeight: 500,
-    opacity: isHovered ? 1 : 0,
-    width: isHovered ? 'auto' : 0,
-    marginLeft: isHovered ? '8px' : 0,
-    transform: `translateX(${isHovered ? '0' : '8px'})`,
-    transition: 'opacity 0.2s ease, transform 0.2s ease'
-  };
-
-  return (
-    <button
-      onClick={onClick}
-      onMouseEnter={() => setIsHovered(true)}
-      onMouseLeave={() => setIsHovered(false)}
-      style={containerStyle}
-    >
-      {actualIconSrc ? (
-        <img src={actualIconSrc} alt="Hobbies" style={iconStyle} />
-      ) : (
-        <div style={{ ...iconStyle, background: '#a855f7' }} />
-      )}
-      <span style={labelStyle}>Hobbies</span>
-    </button>
-  );
-}
-
-function ProjectsNavButton({ onClick, iconSrc, colors, isDark }) {
-  const [isHovered, setIsHovered] = useState(false);
-  const actualIconSrc = getIconPath(iconSrc, isDark);
-
-  const containerStyle = {
-    display: 'flex',
-    alignItems: 'center',
-    justifyContent: 'center',
-    gap: '8px',
-    backgroundColor: isHovered ? colors.navHover : 'transparent',
-    color: isHovered ? colors.text : colors.textSecondary,
-    border: 'none',
-    borderRadius: '9999px',
-    padding: '6px',
-    width: isHovered ? '132px' : '36px',
-    transition: 'all 0.25s ease',
-    cursor: 'pointer',
-    overflow: 'hidden'
-  };
-
-  const iconStyle = {
-    width: '24px',
-    height: '24px',
-    borderRadius: '6px',
-    objectFit: 'cover',
-    display: 'block'
-  };
-
-  const labelStyle = {
-    whiteSpace: 'nowrap',
-    fontSize: '14px',
-    fontWeight: 500,
-    opacity: isHovered ? 1 : 0,
-    width: isHovered ? 'auto' : 0,
-    marginLeft: isHovered ? '8px' : 0,
-    transform: `translateX(${isHovered ? '0' : '8px'})`,
-    transition: 'opacity 0.2s ease, transform 0.2s ease'
-  };
-
-  return (
-    <button
-      onClick={onClick}
-      onMouseEnter={() => setIsHovered(true)}
-      onMouseLeave={() => setIsHovered(false)}
-      style={containerStyle}
-    >
-      {actualIconSrc ? (
-        <img src={actualIconSrc} alt="Projects" style={iconStyle} />
-      ) : (
-        <div style={{ ...iconStyle, background: '#f59e0b' }} />
-      )}
-      <span style={labelStyle}>Projects</span>
-    </button>
-  );
-}
-
-export default function Projects() {
-  const navigate = useNavigate();
-  const { colors, isDark } = useTheme();
-
-  return (
-    <div style={{
-      backgroundColor: colors.background,
-      minHeight: '100vh',
-      color: colors.text,
-      fontFamily: 'system-ui, -apple-system, sans-serif'
-    }}>
-      {/* Navigation */}
-      <nav style={{
-        display: 'flex',
-        justifyContent: 'center',
-        alignItems: 'center',
-        padding: '30px 60px',
-        gap: '8px'
+      <div style={{
+        position: 'relative',
+        width: '100%',
+        height: '500px', // Slightly adjusted height for grid balance
+        borderRadius: '16px',
+        overflow: 'hidden',
+        boxShadow: isHovered ? '0 25px 50px rgba(0,0,0,0.25)' : '0 10px 15px rgba(0,0,0,0.05)',
+        transition: 'all 0.4s ease'
       }}>
-        <HomeNavButton
-          onClick={() => navigate('/')}
-          iconSrc="home.webp"
-          colors={colors}
-          isDark={isDark}
-        />
-        <ProjectsNavButton
-          onClick={() => navigate('/projects')}
-          iconSrc="project.png"
-          colors={colors}
-          isDark={isDark}
-        />
-        <HobbiesNavButton
-          onClick={() => navigate('/hobbies')}
-          iconSrc="game.png"
-          colors={colors}
-          isDark={isDark}
-        />
-        <ResumeNavButton
-          onClick={() => navigate('/resume')}
-          iconSrc="doc.png"
-          colors={colors}
-          isDark={isDark}
-        />
-      </nav>
+        {imageSrc ? (
+           <img src={imageSrc} alt={title} style={{ width: '100%', height: '100%', objectFit: 'cover', transform: isHovered ? 'scale(1.05)' : 'scale(1)', transition: 'transform 0.5s ease-out' }} />
+        ) : (
+          <div style={{ width: '100%', height: '100%', background: 'linear-gradient(45deg, #1a1a1a, #2a2a2a)', transform: isHovered ? 'scale(1.05)' : 'scale(1)', transition: 'transform 0.5s ease-out' }} />
+        )}
 
-      {/* Projects Content */}
-      <div style={{ maxWidth: '900px', margin: '0 auto', padding: '0 60px 60px' }}>
-        <h1 style={{ fontSize: '32px', fontWeight: '500', marginBottom: '30px', paddingBottom: '20px', borderBottom: `1px solid ${colors.border}`, color: colors.textPrimary }}>
-          Projects
-        </h1>
-        <p style={{ color: colors.textSecondary, fontSize: '16px', lineHeight: '1.7' }}>
-          wip
+        <div style={{
+          position: 'absolute', top: 0, left: 0, right: 0, bottom: 0,
+          backgroundColor: 'rgba(0, 0, 0, 0.85)',
+          display: 'flex', alignItems: 'center', justifyContent: 'center', padding: '40px',
+          opacity: isHovered ? 1 : 0, transition: 'opacity 0.3s ease', backdropFilter: 'blur(3px)'
+        }}>
+          <p style={{ color: '#fff', fontSize: '16px', lineHeight: '1.8', maxWidth: '100%', textAlign: 'center', transform: isHovered ? 'translateY(0)' : 'translateY(10px)', transition: 'transform 0.4s ease', margin: 0 }}>
+            {description}
+          </p>
+        </div>
+      </div>
+
+      <div style={{ marginTop: '20px' }}>
+        <h3 style={{ fontSize: '24px', fontWeight: '600', margin: '0 0 8px 0', color: colors.textPrimary }}>
+          {title}
+        </h3>
+        <p style={{ fontSize: '14px', color: colors.textSecondary, fontFamily: 'monospace', margin: 0 }}>
+          {tech}
         </p>
       </div>
     </div>
   );
 }
 
+export default function Projects() {
+  const { colors } = useTheme();
+
+  const projectsData = [
+    {
+      title: "Personal Website",
+      tech: "React • Node.js • JavaScript • HTML/CSS • Git • Vercel",
+      description: "Designed and developed a fully responsive personal portfolio website to showcase projects, experience, and technical skills. Built a modern frontend using React and Node.js with optimized state management. Integrated Git-based version control and deployed continuous updates through Vercel CI/CD workflows.",
+      imageSrc: null 
+    },
+    {
+      title: "Teaching Assistant App",
+      tech: "Python • HTML/CSS",
+      description: "Awarded 1st Place at NRG Hackathon. Led a team of 4 to build a platform assisting teachers with grade management. Features include calculating student averages, determining required scores for thresholds, and providing automated constructive feedback.",
+      imageSrc: null 
+    },
+    {
+      title: "Distraction Tracker",
+      tech: "Python • psutil • pygetwindow",
+      description: "A desktop tool that monitors user focus by tracking window-switching activity during study sessions. Identifies foreground applications to log distractions, calculates a focus score, and exports session summaries with timestamps.",
+      imageSrc: null 
+    },
+    {
+      title: "Weather App",
+      tech: "Python • WeatherAPI",
+      description: "A desktop application that fetches real-time weather data for global locations. Implements API calls to retrieve temperature, humidity, and wind speed while optimizing for reduced redundancy in data fetching.",
+      imageSrc: null 
+    }
+  ];
+
+  return (
+    <Layout>
+        <h1 style={{ fontSize: '32px', fontWeight: '500', marginBottom: '40px', paddingBottom: '20px', borderBottom: `1px solid ${colors.border}`, color: colors.textPrimary }}>
+          Projects
+        </h1>
+
+        <div style={{ 
+          // --- PINTEREST / GRID LAYOUT ---
+          display: 'grid',
+          // This line creates the magic:
+          // It creates as many columns as fit. 
+          // Each column is at least 350px wide. 
+          // If there is extra space, the columns grow to fill it.
+          gridTemplateColumns: 'repeat(auto-fit, minmax(350px, 1fr))',
+          gap: '40px' 
+        }}>
+          {projectsData.map((project, index) => (
+            <ProjectCard
+              key={index}
+              {...project}
+              colors={colors}
+            />
+          ))}
+        </div>
+    </Layout>
+  );
+}
