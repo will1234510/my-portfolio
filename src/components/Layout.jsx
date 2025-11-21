@@ -21,8 +21,6 @@ function NavButton({ onClick, iconSrc, label, color, widthExpanded, isActive, co
     alignItems: 'center',
     justifyContent: 'center',
     gap: '8px',
-    // CHANGED: Removed 'isActive' from background color. 
-    // Now it only shows the bubble when you actually HOVER over it.
     backgroundColor: isHovered ? colors.navHover : 'transparent',
     color: isActive || isHovered ? colors.text : colors.textSecondary,
     border: 'none',
@@ -61,15 +59,18 @@ function NavButton({ onClick, iconSrc, label, color, widthExpanded, isActive, co
 export default function Layout({ children }) {
   const navigate = useNavigate();
   const location = useLocation();
-  const { colors, isDark } = useTheme();
+  // Make sure toggleTheme is available from your context
+  const { colors, isDark, toggleTheme } = useTheme(); 
   const [isMobile, setIsMobile] = useState(window.innerWidth <= 768);
 
+  // 1. Handle Window Resize
   useEffect(() => {
     const handleResize = () => setIsMobile(window.innerWidth <= 768);
     window.addEventListener('resize', handleResize);
     return () => window.removeEventListener('resize', handleResize);
   }, []);
 
+  // 2. Handle Background Colors
   useEffect(() => {
     document.body.style.backgroundColor = colors.background;
     document.body.style.color = colors.text;
@@ -81,6 +82,11 @@ export default function Layout({ children }) {
     }
     metaThemeColor.content = colors.background;
   }, [colors]);
+
+  // 3. NEW: Scroll Reset on Page Change
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [location.pathname]);
 
   return (
     <div style={{ 
@@ -96,11 +102,10 @@ export default function Layout({ children }) {
       {/* Navigation */}
       <nav style={{
         display: 'flex', justifyContent: 'center', alignItems: 'center',
-        padding: isMobile ? '15px 0' : '30px 0', 
+        padding: isMobile ? '15px 0 10px 0' : '30px 0', // Slightly reduced bottom padding on mobile
         gap: isMobile ? '12px' : '8px', 
         width: '100%', position: 'sticky', top: 0, zIndex: 100,
         backgroundColor: colors.background,
-        // CHANGED: Removed the conditional borderBottom entirely
         borderBottom: 'none'
       }}>
         <NavButton onClick={() => navigate('/')} iconSrc="home.webp" label="Home" color="#22c55e" widthExpanded="112px" isActive={location.pathname === '/'} colors={colors} isDark={isDark} />
@@ -108,6 +113,34 @@ export default function Layout({ children }) {
         <NavButton onClick={() => navigate('/hobbies')} iconSrc="game.png" label="Hobbies" color="#a855f7" widthExpanded="124px" isActive={location.pathname === '/hobbies'} colors={colors} isDark={isDark} />
         <NavButton onClick={() => navigate('/resume')} iconSrc="doc.png" label="Resume" color="#3b82f6" widthExpanded="128px" isActive={location.pathname === '/resume'} colors={colors} isDark={isDark} />
       </nav>
+
+      {/* NEW: Mobile Only Theme Switch */}
+      {isMobile && (
+        <div style={{ marginBottom: '20px' }}>
+          <button 
+            onClick={toggleTheme}
+            style={{
+              background: 'transparent',
+              border: `1px solid ${colors.border}`,
+              borderRadius: '20px',
+              padding: '6px 16px',
+              color: colors.textSecondary,
+              fontSize: '13px',
+              cursor: 'pointer',
+              display: 'flex',
+              alignItems: 'center',
+              gap: '8px',
+              fontWeight: 500
+            }}
+          >
+            {isDark ? (
+              <><span>🌙</span> Dark Mode</>
+            ) : (
+              <><span>☀️</span> Light Mode</>
+            )}
+          </button>
+        </div>
+      )}
 
       {/* Main Content Area */}
       <main style={{ 
