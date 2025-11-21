@@ -21,7 +21,9 @@ function NavButton({ onClick, iconSrc, label, color, widthExpanded, isActive, co
     alignItems: 'center',
     justifyContent: 'center',
     gap: '8px',
-    backgroundColor: isActive || isHovered ? colors.navHover : 'transparent',
+    // CHANGED: Removed 'isActive' from background color. 
+    // Now it only shows the bubble when you actually HOVER over it.
+    backgroundColor: isHovered ? colors.navHover : 'transparent',
     color: isActive || isHovered ? colors.text : colors.textSecondary,
     border: 'none',
     borderRadius: '9999px',
@@ -98,7 +100,8 @@ export default function Layout({ children }) {
         gap: isMobile ? '12px' : '8px', 
         width: '100%', position: 'sticky', top: 0, zIndex: 100,
         backgroundColor: colors.background,
-        borderBottom: isMobile ? `1px solid ${colors.border}` : 'none'
+        // CHANGED: Removed the conditional borderBottom entirely
+        borderBottom: 'none'
       }}>
         <NavButton onClick={() => navigate('/')} iconSrc="home.webp" label="Home" color="#22c55e" widthExpanded="112px" isActive={location.pathname === '/'} colors={colors} isDark={isDark} />
         <NavButton onClick={() => navigate('/projects')} iconSrc="project.png" label="Projects" color="#f59e0b" widthExpanded="132px" isActive={location.pathname === '/projects'} colors={colors} isDark={isDark} />
@@ -106,13 +109,11 @@ export default function Layout({ children }) {
         <NavButton onClick={() => navigate('/resume')} iconSrc="doc.png" label="Resume" color="#3b82f6" widthExpanded="128px" isActive={location.pathname === '/resume'} colors={colors} isDark={isDark} />
       </nav>
 
-      {/* Main Content Area - Pinterest Style Fluid Width */}
+      {/* Main Content Area */}
       <main style={{ 
-        // This is the key change: 
-        // 90% width ensures there is ALWAYS 5% space on left and right.
         width: '90%', 
-        maxWidth: '1600px', // Prevents it from getting too wide on huge monitors
-        margin: '0 auto',   // Centers the container
+        maxWidth: '1600px', 
+        margin: '0 auto',   
         paddingBottom: '60px',
         flex: 1
       }}>
@@ -121,3 +122,4 @@ export default function Layout({ children }) {
     </div>
   );
 }
+
