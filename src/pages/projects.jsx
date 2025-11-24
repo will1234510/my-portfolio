@@ -26,8 +26,31 @@ function ProjectCard({ title, tech, description, imageSrc, colors }) {
         {imageSrc ? (
            <img src={imageSrc} alt={title} style={{ width: '100%', height: '100%', objectFit: 'cover', transform: isHovered ? 'scale(1.05)' : 'scale(1)', transition: 'transform 0.5s ease-out' }} />
         ) : (
-          <div style={{ width: '100%', height: '100%', background: 'linear-gradient(45deg, #1a1a1a, #2a2a2a)', transform: isHovered ? 'scale(1.05)' : 'scale(1)', transition: 'transform 0.5s ease-out' }} />
+          <div style={{ width: '100%', height: '100%', backgroundColor: '#1a1a1a', transform: isHovered ? 'scale(1.05)' : 'scale(1)', transition: 'transform 0.5s ease-out' }} />
         )}
+
+        <div style={{
+          position: 'absolute',
+          top: 0,
+          left: 0,
+          right: 0,
+          bottom: 0,
+          padding: '20px',
+          display: 'flex',
+          flexDirection: 'column',
+          alignItems: 'center',
+          justifyContent: 'center',
+          transform: isHovered ? 'translateY(10px)' : 'translateY(0)',
+          opacity: isHovered ? 0 : 1,
+          transition: 'all 0.3s ease'
+        }}>
+          <h3 style={{ fontSize: '28px', fontWeight: '600', margin: '0 0 12px 0', color: '#fff', textAlign: 'center' }}>
+            {title}
+          </h3>
+          <p style={{ fontSize: '16px', color: 'rgba(255,255,255,0.9)', fontFamily: 'monospace', margin: 0, textAlign: 'center' }}>
+            {tech}
+          </p>
+        </div>
 
         <div style={{
           position: 'absolute', top: 0, left: 0, right: 0, bottom: 0,
@@ -39,15 +62,6 @@ function ProjectCard({ title, tech, description, imageSrc, colors }) {
             {description}
           </p>
         </div>
-      </div>
-
-      <div style={{ marginTop: '20px' }}>
-        <h3 style={{ fontSize: '24px', fontWeight: '600', margin: '0 0 8px 0', color: colors.textPrimary }}>
-          {title}
-        </h3>
-        <p style={{ fontSize: '14px', color: colors.textSecondary, fontFamily: 'monospace', margin: 0 }}>
-          {tech}
-        </p>
       </div>
     </div>
   );
