@@ -32,7 +32,7 @@ export default function Portfolio() {
           marginBottom: '24px',
           fontWeight: '400'
         }}>
-          I'm a CS student at University of Western Ontario with a passion for learning and creating new things. Aside from coding and studying,
+          I'm a Computer Science student at University of Western Ontario with a passion for learning and creating new things. Aside from coding and studying,
           I enjoy playing video games and working out.
         </p>
 
