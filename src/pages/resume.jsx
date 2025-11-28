@@ -13,7 +13,7 @@ function Resume() {
             William Wei
           </h1>
           <div style={{ color: colors.textSecondary, fontSize: '14px' }}>
-            905-960-7028 | william.wei.hi77@gmail.com | London, ON
+            905-960-7028 | william.wei.hi77@gmail.com | London, ON | williamwei.ca
           </div>
         </div>
 
@@ -89,14 +89,26 @@ function Resume() {
           <h2 style={{ fontSize: '25px', fontWeight: '500', marginBottom: '20px', color: colors.textPrimary }}>
             Projects
           </h2>
+
+          <div style={{ marginBottom: '25px' }}>
+            <strong style={{ color: colors.text }}>Flashcard Study Application</strong>
+            <span style={{ color: colors.textSecondary, fontSize: '13px', marginLeft: '10px' }}>React, Tailwind CSS, React Router, LocalStorage</span>
+            <ul style={{ color: colors.textSecondary, fontSize: '14px', lineHeight: '1.6', paddingLeft: '20px', marginTop: '8px' }}>
+              <li>Architected a responsive Single Page Application using React and React Router to facilitate seamless navigation between dynamic folder routes</li>
+              <li>Engineered a centralized state management system using the Context API and custom hooks to handle global CRUD operations for folders and flashcards across the application</li>
+              <li>Implemented client-side data persistence using LocalStorage, ensuring user data retention between sessions and optimizing load times</li>
+              <li>Developed a clipboard integration feature allowing users to paste images directly into flashcards using the File API and FileReader for Base64 conversion</li>
+            </ul>
+          </div>
           
           <div style={{ marginBottom: '25px' }}>
             <strong style={{ color: colors.text }}>Personal Website</strong>
             <span style={{ color: colors.textSecondary, fontSize: '13px', marginLeft: '10px' }}>React, Node.js, JavaScript, HTML/CSS, Git, Vercel</span>
             <ul style={{ color: colors.textSecondary, fontSize: '14px', lineHeight: '1.6', paddingLeft: '20px', marginTop: '8px' }}>
-              <li>Designed and developed a fully responsive personal portfolio website to showcase projects, experience, and technical skills</li>
-              <li>Built a modern frontend using React and Node.js and optimized state management</li>
-              <li>Integrated Git-based version control and deployed continuous updates through Vercel, leveraging its CI/CD workflows for seamless production releases</li>
+              <li>Architected a modern single-page application with React Router for seamless navigation across 4 distinct pages</li>
+              <li>Engineered a custom theme system using Context API and React Hooks, supporting persistent dark/light modes with dynamic color schemes</li>
+              <li>Designed responsive UI components with advanced CSS-in-JS styling, hover animations, and mobile-first breakpoints</li>
+              <li>Deployed via Vercel with CI/CD integration for automated builds and zero-downtime updates</li>
             </ul>
           </div>
 
@@ -143,7 +155,7 @@ function Resume() {
               Technical Skills
             </strong>
             <div style={{ color: colors.textSecondary, fontSize: '14px', lineHeight: '1.6' }}>
-              <div><strong>Languages:</strong> Java, Python, C++, JavaScript, HTML/CSS, Bash</div>
+              <div><strong>Languages:</strong> Java, Python, C++, JavaScript, HTML/CSS, Bash, SQL, TypeScript</div>
               <div><strong>Frameworks:</strong> React, TailwindCSS, FastAPI</div>
               <div><strong>Tools:</strong> Git, Node.js, Tailwind, Vercel</div>
               <div><strong>Office:</strong> Excel, Word, Powerpoint, Photoshop, Audacity</div>
@@ -240,5 +252,3 @@ function Resume() {
 }
 
 export default Resume;
-
-
